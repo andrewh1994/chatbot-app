@@ -1,0 +1,26 @@
+.chat-input-container {
+  display: flex;
+  align-items: center;
+  padding: 16px 20px;
+  gap: 10px;
+  border-top: 1px solid #e5e7eb;
+  background: white;
+}
+
+.chat-input {
+  flex: 1;
+  padding: 12px 18px;
+  border: 2px solid #e5e7eb;
+  border-radius: 25px;
+  font-size: 15px;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.chat-input:focus {
+  border-color: #667eea;
+}
+
+.chat-input::placeholder {
+  color: #9ca3af;
+}
