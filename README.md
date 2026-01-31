@@ -1,70 +1,98 @@
-# Getting Started with Create React App
+# AI Chatbot App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A React TypeScript chatbot application using Mistral AI. Built to learn React component architecture, state management, and API integration.
 
-## Available Scripts
+## Features
 
-In the project directory, you can run:
+- Real-time AI responses using Mistral AI
+- React 18 with TypeScript
+- Modern purple gradient UI
+- Tests with Jest and React Testing Library
+- Environment variable configuration
 
-### `npm start`
+## Getting Started
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### Prerequisites
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- Node.js (v14+)
+- npm
+- Mistral AI API key
 
-### `npm test`
+### Installation
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Clone and install:
 
-### `npm run build`
+```bash
+git clone https://github.com/andrewh1994/chatbot-app.git
+cd chatbot-app
+npm install
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### API Key Setup
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Get your API key from [Mistral AI Console](https://console.mistral.ai/). Create an account, go to API Keys, and generate a new key.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Create a `.env` file in the root directory:
 
-### `npm run eject`
+```bash
+REACT_APP_MISTRAL_API_KEY=your_api_key_here
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+**Note:** Don't commit your `.env` file. It's already in `.gitignore`.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Running the App
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+```bash
+npm start
+```
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Opens at [http://localhost:3000](http://localhost:3000).
 
-## Learn More
+### Running Tests
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+```bash
+npm test
+```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+For coverage:
 
-### Code Splitting
+```bash
+npm test -- --coverage
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## Project Structure
 
-### Analyzing the Bundle Size
+```
+src/
+├── components/
+│   ├── Chat.tsx           - Main chat container
+│   ├── ChatLog.tsx        - Message list
+│   ├── ChatInput.tsx      - Input form
+│   ├── MessageBubble.tsx  - Individual messages
+│   ├── Header.tsx         - App header
+│   └── SubmitButton.tsx   - Submit button
+├── Services/
+│   └── mistralAIService.ts - API integration
+├── App.tsx
+└── App.test.tsx
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## Customization
 
-### Making a Progressive Web App
+To change the chatbot personality/role, edit the system prompt in `src/Services/mistralAIService.ts`:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+```typescript
+{ role: "system", content: "You are a helpful assistant." }
+```
 
-### Advanced Configuration
+## Tech Stack
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+- React 18
+- TypeScript
+- Mistral AI API
+- Jest
+- React Testing Library
 
-### Deployment
+## License
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+MIT
